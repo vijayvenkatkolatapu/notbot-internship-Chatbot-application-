@@ -1,0 +1,54 @@
+
+
+
+import pyautogui as p
+import time
+
+def send(msg):
+    p.typewrite("Tridib.Bot: ")
+    p.typewrite(msg)
+    time.sleep(0.1)
+    p.press("enter")
+
+send("Hi! Are you here to apply for the Internship?")
+time.sleep(2)
+
+send("{{YES}} {{NO}}")
+time.sleep(2)
+
+send("Please enter your Name")
+time.sleep(2)
+
+user_name = ""
+while not user_name:
+    user_name = input("Enter your name: ")
+send(user_name)
+time.sleep(2)
+
+send("Please enter your email ID")
+time.sleep(2)
+
+user_email = ""
+while not user_email:
+    user_email = input("Enter your email ID: ")
+send(user_email)
+time.sleep(2)
+
+if not user_email.count('@') == 1 or not user_email.count('.') > 0:
+    send("Please enter a valid email ID")
+    time.sleep(2)
+
+experience_list = ["1 year", "2 years", "3 years", "4 years", "5 years"]
+send("Please select how many years of experience you have with Python/JS/Automation Development")
+time.sleep(2)
+
+user_experience = ""
+while user_experience not in experience_list:
+    user_experience = input("Enter your years of experience (1-5): ")
+send(user_experience)
+time.sleep(2)
+
+
+
+send("Thanks for connecting. We will get back to you shortly.")
+
